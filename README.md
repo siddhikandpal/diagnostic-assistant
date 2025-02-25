@@ -207,9 +207,9 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 ## 📬 Contact
 For questions or feedback, reach out to:
 
-👤 **Your Name**  
-📧 Email: [your.email@example.com](mailto:siddhikandpal43@gmail.com)  
-🐙 GitHub: [your-github-username](https://github.com/siddhikandpal)
+👤 **Siddhi Kandpal**  
+📧 Email: [siddhikandpal43@gmail.com](mailto:siddhikandpal43@gmail.com)  
+🐙 GitHub: [siddhikandpal](https://github.com/siddhikandpal)
 
 ---
 

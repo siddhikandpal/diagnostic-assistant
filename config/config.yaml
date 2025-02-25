@@ -1,0 +1,26 @@
+logging:
+  level: INFO
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: logs/system.log
+
+data:
+  file: data/mock_patient_data.csv
+  test_size: 0.2
+  random_state: 42
+
+models:
+  triage:
+    type: RandomForest
+    n_estimators: 100
+    random_state: 42
+
+forecasting:
+  periods: 7
+
+database:
+  url: sqlite:///data/patients.db  # Use PostgreSQL for production: postgresql://user:password@localhost/dbname
+
+cache:
+  host: localhost
+  port: 6379
+  db: 0

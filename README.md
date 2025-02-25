@@ -1,4 +1,4 @@
-# 🚨 Emergency System
+# 🚨 SwiftCare – Ensuring quick medical response.
 
 A Python-based application designed to assist healthcare professionals in managing emergency situations efficiently. It includes modules for **data processing, triage prediction, resource allocation, demand forecasting, database operations, and caching**.
 

@@ -208,8 +208,8 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 For questions or feedback, reach out to:
 
 👤 **Your Name**  
-📧 Email: [your.email@example.com](mailto:your.email@example.com)  
-🐙 GitHub: [your-github-username](https://github.com/your-github-username)
+📧 Email: [your.email@example.com](mailto:siddhikandpal43@gmail.com)  
+🐙 GitHub: [your-github-username](https://github.com/siddhikandpal)
 
 ---
 

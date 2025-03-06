@@ -1,4 +1,4 @@
-from dependency_injector import containers, providers
+from de_injector import containers, providers
 from modules.data_processing import PatientDataProcessor
 from modules.models import RandomForestTriageModel
 from modules.allocation import HospitalResourceAllocator
@@ -7,43 +7,32 @@ from modules.database import Database
 from modules.caching import Cache
 
 class Container(containers.DeclarativeContainer):
-    """Dependency injection container for the Emergency System."""
-
-    # Load configuration from a YAML file
     config = providers.Configuration(yaml_files=["config/config.yaml"])
 
-    # Data Processing
     data_processor = providers.Singleton(
         PatientDataProcessor,
         data_file=config.data.file
     )
 
-    # Triage Model
     triage_model = providers.Singleton(
         RandomForestTriageModel,
         n_estimators=config.models.triage.n_estimators,
         random_state=config.models.triage.random_state
     )
 
-    # Resource Allocator
     resource_allocator = providers.Factory(
         HospitalResourceAllocator,
         hospitals=config.hospitals,
         patients=config.patients
     )
 
-    # Demand Forecaster
-    demand_forecaster = providers.Singleton(
-        ResourceDemandForecaster
-    )
+    demand_forecaster = providers.Singleton(ResourceDemandForecaster)
 
-    # Database
     database = providers.Singleton(
         Database,
         db_url=config.database.url
     )
 
-    # Cache
     cache = providers.Singleton(
         Cache,
         host=config.cache.host,

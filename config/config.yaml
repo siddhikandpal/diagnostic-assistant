@@ -18,9 +18,21 @@ forecasting:
   periods: 7
 
 database:
-  url: sqlite:///data/patients.db  # Use PostgreSQL for production: postgresql://user:password@localhost/dbname
+  url: sqlite:///data/patients.db
 
 cache:
   host: localhost
   port: 6379
   db: 0
+
+hospitals:
+  Hospital A:
+    capacity: 100
+  Hospital B:
+    capacity: 80
+
+patients:
+  Patient A:
+    id: 1
+  Patient B:
+    id: 2

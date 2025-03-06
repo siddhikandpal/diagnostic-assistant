@@ -5,8 +5,8 @@ import asyncio
 import logging
 
 logger = logging.getLogger(__name__)
-
 app = FastAPI()
+
 container = Container()
 container.config.from_yaml("config/config.yaml")
 
@@ -18,11 +18,10 @@ class PatientRequest(BaseModel):
 
 @app.post("/triage")
 async def predict_triage(patient: PatientRequest):
-    """Predict triage category for a patient."""
     try:
         model = container.triage_model()
         X = [[patient.heart_rate, patient.blood_pressure, patient.oxygen_level, patient.injury_severity]]
-        prediction = await asyncio.to_thread(model.predict, X)  # Run synchronous code in a thread
+        prediction = await asyncio.to_thread(model.predict, X)
         return {"triage_category": prediction[0]}
     except Exception as e:
         logger.error(f"Error predicting triage: {e}")
@@ -30,11 +29,10 @@ async def predict_triage(patient: PatientRequest):
 
 @app.post("/allocate-resources")
 async def allocate_resources(patients: list[PatientRequest]):
-    """Allocate hospital resources for a list of patients."""
     try:
         allocator = container.resource_allocator()
-        patients_data = [{"id": i+1, "triage": "Red"} for i in range(len(patients))]  # Mock triage
-        await asyncio.to_thread(allocator.allocate_resources, patients_data)  # Run synchronous code in a thread
+        patients_data = [{"id": i+1, "triage": "Red"} for i in range(len(patients))]
+        await asyncio.to_thread(allocator.allocate_resources, patients_data)
         return {"message": "Resources allocated successfully."}
     except Exception as e:
         logger.error(f"Error allocating resources: {e}")

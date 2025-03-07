@@ -1,3 +1,4 @@
+from dependency_injector import containers, providers
 from modules.data_processing import PatientDataProcessor
 from modules.models import RandomForestTriageModel
 from modules.allocation import HospitalResourceAllocator

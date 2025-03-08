@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 pandas
+plotly
 scikit-learn
 prophet
 ortools
